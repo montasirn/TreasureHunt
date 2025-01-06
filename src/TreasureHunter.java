@@ -11,6 +11,7 @@ public class TreasureHunter
     //Instance variables
     private Town currentTown;
     private Hunter hunter;
+    private Treasure treasure;
     private boolean hardMode;
 
     //Constructor
@@ -23,6 +24,7 @@ public class TreasureHunter
         currentTown = null;
         hunter = null;
         hardMode = false;
+        treasure = new Treasure();
     }
 
     // starts the game; this is the only public method
@@ -87,6 +89,9 @@ public class TreasureHunter
         // constructor for Town, but this illustrates another way to associate
         // an object with an object of a different class
         currentTown.hunterArrives(hunter);
+
+        //generate and set the random treasure in the current town the hunter is in.
+        currentTown.setTreasureInTown(treasure.generateTreasure());
     }
 
     /**
@@ -110,6 +115,7 @@ public class TreasureHunter
             System.out.println("(S)ell something at the shop.");
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
+            System.out.println("(H)unt for treasure!");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
             System.out.print("What's your next move? ");
@@ -145,6 +151,10 @@ public class TreasureHunter
         else if (choice.equals("X") || choice.equals("x"))
         {
             System.out.println("Fare thee well, " + hunter.getHunterName() + "!");
+        }
+        else if (choice.equals("H") || choice.equals("h"))
+        {
+
         }
         else
         {

@@ -9,6 +9,7 @@ public class Town
     private Shop shop;
     private Terrain terrain;
     private String printMessage;
+    private String treasureInTown;
     private boolean toughTown;
 
     //Constructor
@@ -35,6 +36,11 @@ public class Town
     public String getLatestNews()
     {
         return printMessage;
+    }
+
+    public void setTreasureInTown(String treasureInTown)
+    {
+        this.treasureInTown = treasureInTown;
     }
 
     /**
