@@ -4,6 +4,7 @@
  */
 public class Town
 {
+    //something
     //instance variables
     private Hunter hunter;
     private Shop shop;
