@@ -38,6 +38,10 @@ public class Town
         return printMessage;
     }
 
+    public String getTreasureInTown() {
+        return treasureInTown;
+    }
+
     public void setTreasureInTown(String treasureInTown)
     {
         this.treasureInTown = treasureInTown;
