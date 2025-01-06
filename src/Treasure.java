@@ -41,6 +41,7 @@ public class Treasure {
         return "";
     }
 
+    //something
     public void huntTreasure() {
         int choice = (int) (Math.random() * 2) + 1;
         if (choice == 1) {
