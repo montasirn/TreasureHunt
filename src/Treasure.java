@@ -2,6 +2,7 @@ public class Treasure {
     private String treasure1;
     private String treasure2;
     private String treasure3;
+    private String treasureInTown;
     private boolean foundTreasure1;
     private boolean foundTreasure2;
     private boolean foundTreasure3;
@@ -12,6 +13,7 @@ public class Treasure {
         treasure1 = "Twisted Dagger";
         treasure2 = "Obsidian Pendant";
         treasure3 = "Golden Eye";
+        treasureInTown = "";
         foundTreasure1 = false;
         foundTreasure2 = false;
         foundTreasure3 = false;
@@ -32,21 +34,29 @@ public class Treasure {
     public String generateTreasure() {
         int choice = (int) (Math.random() * 3) + 1;
         if (choice == 1) {
+            treasureInTown = treasure1;
             return treasure1;
         } else if (choice == 2) {
+            treasureInTown = treasure2;
             return treasure2;
         } else if (choice == 3) {
+            treasureInTown = treasure3;
             return treasure3;
         }
         return "";
     }
 
-    //something
     public void huntTreasure() {
         int choice = (int) (Math.random() * 2) + 1;
         if (choice == 1) {
             foundTreasureInTown = true;
-            if
+            if (treasureInTown.equals(treasure1)) {
+                foundTreasure1 = true;
+            } else if (treasureInTown.equals(treasure2)) {
+                foundTreasure2 = true;
+            } else if (treasureInTown.equals(treasure3)) {
+                foundTreasure3 = true;
+            }
         }
     }
 
