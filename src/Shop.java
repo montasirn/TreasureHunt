@@ -33,7 +33,7 @@ public class Shop
         customer = hunter;
 
         Scanner scanner = new Scanner(System.in);
-        if (buyOrSell.equals("B") || buyOrSell.equals("b"))
+        if (buyOrSell.equalsIgnoreCase("b"))
         {
             System.out.println("Welcome to the shop! We have the finest wares in town.");
             System.out.println("Currently we have the following items:");
@@ -50,7 +50,7 @@ public class Shop
                 System.out.print("It'll cost you " + cost + " gold. Buy it (y/n)? ");
                 String option = scanner.nextLine();
 
-                if (option.equals("y") || option.equals("Y"))
+                if (option.equalsIgnoreCase("y"))
                 {
                     buyItem(item);
                 }

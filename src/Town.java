@@ -11,18 +11,13 @@ public class Town
     private Terrain terrain;
     private String printMessage;
     private boolean toughTown;
-    private static final String RED = "\u001B[31m";
-    private static final String GREEN = "\u001B[32m";
-    private static final String YELLOW = "\u001B[33m";
-    private static final String BLUE = "\u001B[34m";
-    private static final String PURPLE = "\u001B[35m";
-    private static final String CYAN = "\u001B[36m";
-    private static final String RESET = "\u001B[0m";
-    private static final String BOLD_BLUE = "\\e[1;34m";
-    private static final String BOLD_GREEN = "\\e[1;32m";
-    private static final String BOLD_YELLOW = "\\e[1;33m";
-    private static final String BOLD_WHITE = "\\e[1;37m";
-    private static final String BOLD_PURPLE = "\\e[1;35m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String RESET = "\u001B[0m";
 
     //Constructor
     /**
@@ -157,23 +152,23 @@ public class Town
         double rnd = Math.random();
         if (rnd < .2)
         {
-            return new Terrain("Mountains", "Rope");
+            return new Terrain(  CYAN + "Mountains" + RESET, "Rope");
         }
         else if (rnd < .4)
         {
-            return new Terrain("Ocean", "Boat");
+            return new Terrain(BLUE + "Ocean" + RESET, "Boat");
         }
         else if (rnd < .6)
         {
-            return new Terrain("Plains", "Horse");
+            return new Terrain(GREEN + "Plains" + RESET, "Horse");
         }
         else if (rnd < .8)
         {
-            return new Terrain("Desert", "Water");
+            return new Terrain(YELLOW + "Desert" + RESET, "Water");
         }
         else
         {
-            return new Terrain("Jungle", "Machete");
+            return new Terrain(PURPLE + "Jungle" + RESET, "Machete");
         }
     }
 
