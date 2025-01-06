@@ -112,21 +112,25 @@ public class Town
         {
             printMessage = "You couldn't find any trouble";
         }
-        else
-        {
+        else {
             printMessage = "You want trouble, stranger!  You got it!\nOof! Umph! Ow!\n";
-            int goldDiff = (int)(Math.random() * 10) + 1;
-            if (Math.random() > noTroubleChance)
-            {
-                printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
-                printMessage += "\nYou won the brawl and receive " +  goldDiff + " gold.";
-                hunter.changeGold(goldDiff);
+            int goldDiff;
+            int goldLost;
+            if (TreasureHunter.easyMode == true) {
+                goldDiff = (int) (Math.random() * 15) + 1;
+                goldLost = (int) (Math.random() * 5 + 1);
+            } else {
+                goldDiff = (int) (Math.random() * 10) + 1;
+                goldLost = (int) (Math.random() * 10 + 1);
             }
-            else
-            {
+            if (Math.random() > noTroubleChance) {
+                printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
+                printMessage += "\nYou won the brawl and receive " + goldDiff + " gold.";
+                hunter.changeGold(goldDiff);
+            } else {
                 printMessage += "That'll teach you to go lookin' fer trouble in MY town! Now pay up!";
-                printMessage += "\nYou lost the brawl and pay " +  goldDiff + " gold.";
-                hunter.changeGold(-1 * goldDiff);
+                printMessage += "\nYou lost the brawl and pay " + goldDiff + " gold.";
+                hunter.changeGold(-1 * goldLost);
             }
         }
     }
