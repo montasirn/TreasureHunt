@@ -11,6 +11,18 @@ public class Town
     private String printMessage;
     private String treasureInTown;
     private boolean toughTown;
+    private static final String RED = "\u001B[31m";
+    private static final String GREEN = "\u001B[32m";
+    private static final String YELLOW = "\u001B[33m";
+    private static final String BLUE = "\u001B[34m";
+    private static final String PURPLE = "\u001B[35m";
+    private static final String CYAN = "\u001B[36m";
+    private static final String RESET = "\u001B[0m";
+    private static final String BOLD_BLUE = "\\e[1;34m";
+    private static final String BOLD_GREEN = "\\e[1;32m";
+    private static final String BOLD_YELLOW = "\\e[1;33m";
+    private static final String BOLD_WHITE = "\\e[1;37m";
+    private static final String BOLD_PURPLE = "\\e[1;35m";
 
     //Constructor
     /**
