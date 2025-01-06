@@ -2,23 +2,30 @@ public class Treasure {
     private String treasure1;
     private String treasure2;
     private String treasure3;
-    private boolean foundTreasure;
+    private boolean foundTreasure1;
+    private boolean foundTreasure2;
+    private boolean foundTreasure3;
+    private boolean foundTreasureInTown;
+
 
     Treasure() {
         treasure1 = "Twisted Dagger";
         treasure2 = "Obsidian Pendant";
         treasure3 = "Golden Eye";
-        foundTreasure = false;
+        foundTreasure1 = false;
+        foundTreasure2 = false;
+        foundTreasure3 = false;
+        foundTreasureInTown = false;
     }
 
     //Accessor methods
     public boolean isFoundTreasure() {
-        return foundTreasure;
+        return foundTreasureInTown;
     }
 
     //Mutator method
     public void setFoundTreasure(boolean foundTreasure) {
-        this.foundTreasure = foundTreasure;
+        this.foundTreasureInTown = foundTreasure;
     }
 
     //generate a random treasure in currentTown
@@ -36,7 +43,10 @@ public class Treasure {
 
     public void huntTreasure() {
         int choice = (int) (Math.random() * 2) + 1;
-
+        if (choice == 1) {
+            foundTreasureInTown = true;
+            if
+        }
     }
 
 }
