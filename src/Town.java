@@ -10,7 +10,6 @@ public class Town
     private Shop shop;
     private Terrain terrain;
     private String printMessage;
-    private String treasureInTown;
     private boolean toughTown;
     private static final String RED = "\u001B[31m";
     private static final String GREEN = "\u001B[32m";
@@ -49,15 +48,6 @@ public class Town
     public String getLatestNews()
     {
         return printMessage;
-    }
-
-    public String getTreasureInTown() {
-        return treasureInTown;
-    }
-
-    public void setTreasureInTown(String treasureInTown)
-    {
-        this.treasureInTown = treasureInTown;
     }
 
     /**

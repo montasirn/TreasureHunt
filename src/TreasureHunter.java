@@ -100,7 +100,7 @@ public class TreasureHunter
         currentTown.hunterArrives(hunter);
 
         //generate and set the random treasure in the current town the hunter is in.
-        currentTown.setTreasureInTown(treasure.generateTreasure());
+        treasure.generateTreasure();
     }
 
     /**
@@ -163,7 +163,7 @@ public class TreasureHunter
         }
         else if (choice.equals("H") || choice.equals("h"))
         {
-
+            treasure.huntTreasure();
         }
         else
         {

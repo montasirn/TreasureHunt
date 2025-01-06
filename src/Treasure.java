@@ -31,19 +31,15 @@ public class Treasure {
     }
 
     //generate a random treasure in currentTown
-    public String generateTreasure() {
+    public void generateTreasure() {
         int choice = (int) (Math.random() * 3) + 1;
         if (choice == 1) {
             treasureInTown = treasure1;
-            return treasure1;
         } else if (choice == 2) {
             treasureInTown = treasure2;
-            return treasure2;
         } else if (choice == 3) {
             treasureInTown = treasure3;
-            return treasure3;
         }
-        return "";
     }
 
     public void huntTreasure() {
