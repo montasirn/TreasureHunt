@@ -21,13 +21,9 @@ public class Treasure {
     }
 
     //Accessor methods
-    public boolean isFoundTreasure() {
+    public boolean isFoundTreasureInTown()
+    {
         return foundTreasureInTown;
-    }
-
-    //Mutator method
-    public void setFoundTreasure(boolean foundTreasure) {
-        this.foundTreasureInTown = foundTreasure;
     }
 
     //generate a random treasure in currentTown
