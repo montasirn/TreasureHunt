@@ -2,7 +2,6 @@ public class Treasure {
     private String treasure1;
     private String treasure2;
     private String treasure3;
-    private String treasureInTown;
     private boolean foundTreasure1;
     private boolean foundTreasure2;
     private boolean foundTreasure3;
@@ -13,7 +12,6 @@ public class Treasure {
         treasure1 = "Twisted Dagger";
         treasure2 = "Obsidian Pendant";
         treasure3 = "Golden Eye";
-        treasureInTown = "";
         foundTreasure1 = false;
         foundTreasure2 = false;
         foundTreasure3 = false;
@@ -26,30 +24,34 @@ public class Treasure {
         return foundTreasureInTown;
     }
 
-    //generate a random treasure in currentTown
-    public void generateTreasure() {
-        int choice = (int) (Math.random() * 3) + 1;
-        if (choice == 1) {
-            treasureInTown = treasure1;
-        } else if (choice == 2) {
-            treasureInTown = treasure2;
-        } else if (choice == 3) {
-            treasureInTown = treasure3;
-        }
+    //setter methods
+    public void setFoundTreasure1(boolean foundTreasure1) {
+        this.foundTreasure1 = foundTreasure1;
     }
 
-    public void huntTreasure() {
-        int choice = (int) (Math.random() * 2) + 1;
+    public void setFoundTreasure2(boolean foundTreasure2) {
+        this.foundTreasure2 = foundTreasure2;
+    }
+
+    public void setFoundTreasure3(boolean foundTreasure3) {
+        this.foundTreasure3 = foundTreasure3;
+    }
+
+    public void setFoundTreasureInTown(boolean foundTreasureInTown) {
+        this.foundTreasureInTown = foundTreasureInTown;
+    }
+
+    //generate a random treasure in currentTown
+    public String generateTreasure() {
+        int choice = (int) (Math.random() * 3) + 1;
         if (choice == 1) {
-            foundTreasureInTown = true;
-            if (treasureInTown.equals(treasure1)) {
-                foundTreasure1 = true;
-            } else if (treasureInTown.equals(treasure2)) {
-                foundTreasure2 = true;
-            } else if (treasureInTown.equals(treasure3)) {
-                foundTreasure3 = true;
-            }
+            return treasure1;
+        } else if (choice == 2) {
+            return treasure2;
+        } else if (choice == 3) {
+            return treasure3;
         }
+        return "";
     }
 
 }

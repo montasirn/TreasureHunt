@@ -91,7 +91,7 @@ public class TreasureHunter
         // creating the new Town -- which we need to store as an instance
         // variable in this class, since we need to access the Town
         // object in other methods of this class
-        currentTown = new Town(shop, toughness);
+        currentTown = new Town(shop, toughness, treasure);
 
         // calling the hunterArrives method, which takes the Hunter
         // as a parameter; note this also could have been done in the
@@ -99,8 +99,7 @@ public class TreasureHunter
         // an object with an object of a different class
         currentTown.hunterArrives(hunter);
 
-        //generate and set the random treasure in the current town the hunter is in.
-        treasure.generateTreasure();
+        currentTown.setTreasureInTown(treasure.generateTreasure());
     }
 
     /**
@@ -163,7 +162,8 @@ public class TreasureHunter
         }
         else if (choice.equals("H") || choice.equals("h"))
         {
-            treasure.huntTreasure();
+
+
         }
         else
         {

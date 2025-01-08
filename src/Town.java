@@ -9,6 +9,8 @@ public class Town
     private Hunter hunter;
     private Shop shop;
     private Terrain terrain;
+    private Treasure treasure;
+    private String treasureInTown;
     private String printMessage;
     private boolean toughTown;
     public static final String RED = "\u001B[31m";
@@ -25,10 +27,12 @@ public class Town
      * @param s The town's shoppe.
      * @param t The surrounding terrain.
      */
-    public Town(Shop shop, double toughness)
+    public Town(Shop shop, double toughness, Treasure treasure)
     {
         this.shop = shop;
         this.terrain = getNewTerrain();
+        this.treasure = treasure;
+        treasureInTown = "";
 
         // the hunter gets set using the hunterArrives method, which
         // gets called from a client class
@@ -43,6 +47,10 @@ public class Town
     public String getLatestNews()
     {
         return printMessage;
+    }
+
+    public void setTreasureInTown(String treasureInTown) {
+        this.treasureInTown = treasureInTown;
     }
 
     /**
@@ -133,6 +141,20 @@ public class Town
                 printMessage += "That'll teach you to go lookin' fer trouble in MY town! Now pay up!";
                 printMessage += "\nYou lost the brawl and pay " + goldDiff + " gold.";
                 hunter.changeGold(-1 * goldLost);
+            }
+        }
+    }
+
+    public void huntTreasure() {
+        int choice = (int) (Math.random() * 2) + 1;
+        if (choice == 1) {
+            treasure.setFoundTreasureInTown(true);
+            if (treasureInTown.equals(treasure1)) {
+                foundTreasure1 = true;
+            } else if (treasureInTown.equals(treasure2)) {
+                foundTreasure2 = true;
+            } else if (treasureInTown.equals(treasure3)) {
+                foundTreasure3 = true;
             }
         }
     }
