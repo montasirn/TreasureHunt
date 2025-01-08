@@ -158,22 +158,39 @@ public class Town
                 treasure.setFoundTreasureInTown(true);
                 if (treasureInTown.equals(treasure.getTreasure1()))
                 {
-                    treasure.setFoundTreasure1(true);
-                    printMessage = "You found the Twisted Dagger!";
-                    hunter.addItem(treasure.getTreasure1());
-
+                    if (hunter.hasItemInKit(treasure.getTreasure1()))
+                    {
+                        printMessage = "You already found this treasure.";
+                    }
+                    else
+                    {
+                        printMessage = "You found the Twisted Dagger!";
+                        hunter.addItem(treasure.getTreasure1());
+                    }
                 }
                 else if (treasureInTown.equals(treasure.getTreasure2()))
                 {
-                    treasure.setFoundTreasure2(true);
-                    printMessage = "You found the Obsidian Pendant!";
-                    hunter.addItem(treasure.getTreasure2());
+                    if (hunter.hasItemInKit(treasure.getTreasure2()))
+                    {
+                        printMessage = "You already found this treasure.";
+                    }
+                    else
+                    {
+                        printMessage = "You found the Obsidian Pendant!";
+                        hunter.addItem(treasure.getTreasure2());
+                    }
                 }
                 else if (treasureInTown.equals(treasure.getTreasure3()))
                 {
-                    treasure.setFoundTreasure3(true);
-                    printMessage = "You found the Golden Eye!";
-                    hunter.addItem(treasure.getTreasure3());
+                    if (hunter.hasItemInKit(treasure.getTreasure3()))
+                    {
+                        printMessage = "You already found this treasure.";
+                    }
+                    else
+                    {
+                        printMessage = "You found the Golden Eye!";
+                        hunter.addItem(treasure.getTreasure3());
+                    }
                 }
             }
             else

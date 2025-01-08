@@ -100,6 +100,7 @@ public class TreasureHunter
         currentTown.hunterArrives(hunter);
 
         currentTown.setTreasureInTown(treasure.generateTreasure());
+        treasure.setFoundTreasureInTown(false);
     }
 
     /**

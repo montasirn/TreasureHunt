@@ -2,9 +2,6 @@ public class Treasure {
     private String treasure1;
     private String treasure2;
     private String treasure3;
-    private boolean foundTreasure1;
-    private boolean foundTreasure2;
-    private boolean foundTreasure3;
     private boolean foundTreasureInTown;
 
 
@@ -12,9 +9,6 @@ public class Treasure {
         treasure1 = "Twisted Dagger";
         treasure2 = "Obsidian Pendant";
         treasure3 = "Golden Eye";
-        foundTreasure1 = false;
-        foundTreasure2 = false;
-        foundTreasure3 = false;
         foundTreasureInTown = false;
     }
 
@@ -37,18 +31,6 @@ public class Treasure {
     }
 
     //setter methods
-    public void setFoundTreasure1(boolean foundTreasure1) {
-        this.foundTreasure1 = foundTreasure1;
-    }
-
-    public void setFoundTreasure2(boolean foundTreasure2) {
-        this.foundTreasure2 = foundTreasure2;
-    }
-
-    public void setFoundTreasure3(boolean foundTreasure3) {
-        this.foundTreasure3 = foundTreasure3;
-    }
-
     public void setFoundTreasureInTown(boolean foundTreasureInTown) {
         this.foundTreasureInTown = foundTreasureInTown;
     }
