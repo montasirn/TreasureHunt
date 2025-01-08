@@ -14,6 +14,7 @@ public class TreasureHunter
     private Treasure treasure;
     public static boolean hardMode;
     public static boolean easyMode;
+    public static boolean cheatMode;
 
     //Constructor
     /**
@@ -26,6 +27,7 @@ public class TreasureHunter
         hunter = null;
         hardMode = false;
         easyMode = false;
+        cheatMode = false;
         treasure = new Treasure();
     }
 
@@ -58,6 +60,8 @@ public class TreasureHunter
             easyMode = true;
         } else if (hard.equalsIgnoreCase("hard")){
             hardMode = true;
+        } else if (hard.equalsIgnoreCase("cookies")) {
+            cheatMode = true;
         }
 
     }
