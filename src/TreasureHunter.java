@@ -162,8 +162,7 @@ public class TreasureHunter
         }
         else if (choice.equals("H") || choice.equals("h"))
         {
-
-
+            currentTown.huntTreasure();
         }
         else
         {

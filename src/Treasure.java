@@ -24,6 +24,18 @@ public class Treasure {
         return foundTreasureInTown;
     }
 
+    public String getTreasure1() {
+        return treasure1;
+    }
+
+    public String getTreasure2() {
+        return treasure2;
+    }
+
+    public String getTreasure3() {
+        return treasure3;
+    }
+
     //setter methods
     public void setFoundTreasure1(boolean foundTreasure1) {
         this.foundTreasure1 = foundTreasure1;

@@ -146,17 +146,42 @@ public class Town
     }
 
     public void huntTreasure() {
-        int choice = (int) (Math.random() * 2) + 1;
-        if (choice == 1) {
-            treasure.setFoundTreasureInTown(true);
-            if (treasureInTown.equals(treasure1)) {
-                foundTreasure1 = true;
-            } else if (treasureInTown.equals(treasure2)) {
-                foundTreasure2 = true;
-            } else if (treasureInTown.equals(treasure3)) {
-                foundTreasure3 = true;
+        if (treasure.isFoundTreasureInTown())
+        {
+            printMessage = "You already found the treasure in this town. Go to the next town.";
+        }
+        else
+        {
+            int choice = (int) (Math.random() * 2) + 1;
+            if (choice == 1)
+            {
+                treasure.setFoundTreasureInTown(true);
+                if (treasureInTown.equals(treasure.getTreasure1()))
+                {
+                    treasure.setFoundTreasure1(true);
+                    printMessage = "You found the Twisted Dagger!";
+                    hunter.addItem(treasure.getTreasure1());
+
+                }
+                else if (treasureInTown.equals(treasure.getTreasure2()))
+                {
+                    treasure.setFoundTreasure2(true);
+                    printMessage = "You found the Obsidian Pendant!";
+                    hunter.addItem(treasure.getTreasure2());
+                }
+                else if (treasureInTown.equals(treasure.getTreasure3()))
+                {
+                    treasure.setFoundTreasure3(true);
+                    printMessage = "You found the Golden Eye!";
+                    hunter.addItem(treasure.getTreasure3());
+                }
+            }
+            else
+            {
+                printMessage = "You failed to find the treasure. Try again!";
             }
         }
+
     }
 
     public String toString()
