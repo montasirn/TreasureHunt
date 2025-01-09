@@ -5,7 +5,7 @@
  *
  */
 import java.util.Scanner;
-
+// smth
 public class TreasureHunter
 {
     //Instance variables

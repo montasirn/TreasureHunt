@@ -1,6 +1,6 @@
 import java.sql.SQLOutput;
 import java.util.Scanner;
-
+// smth
 public class Casino {
     private int max;
     private int min;
