@@ -117,6 +117,18 @@ public class TreasureHunter
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
+        //Determines win/lose for the hunter
+        if (hunter.hasItemInKit(treasure.getTreasure1()) && hunter.hasItemInKit(treasure.getTreasure2()) && hunter.hasItemInKit(treasure.getTreasure3()))
+        {
+            choice = "x";
+            System.out.println("YOU FOUND ALL THREE TREASURES, " + hunter.getHunterName() + ". YOU WON!");
+        }
+        else if (hunter.getGold() == 0)
+        {
+            choice = "x";
+            System.out.println("YOU HAVE NO GOLD LEFT, " + hunter.getHunterName() + ". YOU LOST!");
+        }
+
         while (!(choice.equals("X") || choice.equals("x")))
         {
             System.out.println();
