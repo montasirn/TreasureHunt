@@ -37,12 +37,12 @@ public class Casino {
         } else {
             if (roll == gamble){
                 System.out.println("The lucky number was " + roll + "! You just doubled your gold!");
-                hunter.changeGold(hunter.getGold());
+                gambler.changeGold(gamble);
             } else if (min <= roll && roll <= max) {
                 System.out.println("The lucky number was " + roll + ". You were close so you get to keep your gold.");
             } else {
                 System.out.println("The lucky number was " + roll + ". You just lost all your gold!");
-                hunter.changeGold(-hunter.getGold());
+                gambler.changeGold(-gamble);
             }
         }
     }
