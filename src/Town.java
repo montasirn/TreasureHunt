@@ -126,14 +126,22 @@ public class Town
             printMessage = "You want trouble, stranger!  You got it!\nOof! Umph! Ow!\n";
             int goldDiff;
             int goldLost;
-            if (TreasureHunter.easyMode == true) {
+            if (TreasureHunter.easyMode == true)
+            {
                 goldDiff = (int) (Math.random() * 15) + 1;
                 goldLost = (int) (Math.random() * 5 + 1);
-            } else {
+            }
+            else if (TreasureHunter.cheatMode)
+            {
+                goldDiff = 100;
+                goldLost = 0;
+            }
+            else
+            {
                 goldDiff = (int) (Math.random() * 10) + 1;
                 goldLost = (int) (Math.random() * 10 + 1);
             }
-            if (Math.random() > noTroubleChance) {
+            if (Math.random() > noTroubleChance || TreasureHunter.cheatMode) {
                 printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
                 printMessage += "\nYou won the brawl and receive " + goldDiff + " gold.";
                 hunter.changeGold(goldDiff);
@@ -160,7 +168,7 @@ public class Town
                 {
                     if (hunter.hasItemInKit(treasure.getTreasure1()))
                     {
-                        printMessage = "You already found this treasure.";
+                        printMessage = "You already found the Twisted Dagger.";
                     }
                     else
                     {
@@ -172,7 +180,7 @@ public class Town
                 {
                     if (hunter.hasItemInKit(treasure.getTreasure2()))
                     {
-                        printMessage = "You already found this treasure.";
+                        printMessage = "You already found the Obsidian Pendant.";
                     }
                     else
                     {
@@ -184,7 +192,7 @@ public class Town
                 {
                     if (hunter.hasItemInKit(treasure.getTreasure3()))
                     {
-                        printMessage = "You already found this treasure.";
+                        printMessage = "You already found the Golden Eye.";
                     }
                     else
                     {
