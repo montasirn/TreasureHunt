@@ -40,6 +40,7 @@ public class Shop
             System.out.println(inventory());
             System.out.print("What're you lookin' to buy? ");
             String item = scanner.nextLine();
+            item = item.substring(0, 1).toUpperCase() + item.substring(1);
             int cost = checkMarketPrice(item, true);
             if (cost == 0)
             {
@@ -71,7 +72,7 @@ public class Shop
                 System.out.print("It'll get you " + cost + " gold. Sell it (y/n)? ");
                 String option = scanner.nextLine();
 
-                if (option.equals("y") || option.equals("Y"))
+                if (option.equalsIgnoreCase("y"))
                 {
                     sellItem(item);
                 }
@@ -154,23 +155,23 @@ public class Shop
      */
     public int getCostOfItem(String item)
     {
-        if (item.equals("Water"))
+        if (item.equalsIgnoreCase("Water"))
         {
             return WATER_COST;
         }
-        else if (item.equals("Rope"))
+        else if (item.equalsIgnoreCase("Rope"))
         {
             return ROPE_COST;
         }
-        else if (item.equals("Machete"))
+        else if (item.equalsIgnoreCase("Machete"))
         {
             return MACHETE_COST;
         }
-        else if (item.equals("Horse"))
+        else if (item.equalsIgnoreCase("Horse"))
         {
             return HORSE_COST;
         }
-        else if (item.equals("Boat"))
+        else if (item.equalsIgnoreCase("Boat"))
         {
             return BOAT_COST;
         }
