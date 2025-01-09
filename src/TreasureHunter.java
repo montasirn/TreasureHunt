@@ -142,6 +142,7 @@ public class TreasureHunter
             System.out.println("(L)ook for trouble!");
             System.out.println("(H)unt for treasure!");
             System.out.println("Give up the hunt and e(X)it.");
+            System.out.println("Gamble at the (C)asino.");
             System.out.println();
             System.out.print("What's your next move? ");
             choice = scanner.nextLine();
@@ -180,8 +181,11 @@ public class TreasureHunter
         else if (choice.equals("H") || choice.equals("h"))
         {
             currentTown.huntTreasure();
-        }
-        else
+        } else if (choice.equalsIgnoreCase("C")) {
+            Casino c = new Casino("Lucky Dice");
+            c.gamble();
+            c.gold(hunter);
+        } else
         {
             System.out.println("Yikes! That's an invalid option! Try again.");
         }
