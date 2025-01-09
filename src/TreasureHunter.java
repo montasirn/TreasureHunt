@@ -117,18 +117,6 @@ public class TreasureHunter
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-        //Determines win/lose for the hunter
-        if (hunter.hasItemInKit(treasure.getTreasure1()) && hunter.hasItemInKit(treasure.getTreasure2()) && hunter.hasItemInKit(treasure.getTreasure3()))
-        {
-            choice = "x";
-            System.out.println("YOU FOUND ALL THREE TREASURES, " + hunter.getHunterName() + ". YOU WON!");
-        }
-        else if (hunter.getGold() == 0)
-        {
-            choice = "x";
-            System.out.println("YOU HAVE NO GOLD LEFT, " + hunter.getHunterName() + ". YOU LOST!");
-        }
-
         while (!(choice.equals("X") || choice.equals("x")))
         {
             System.out.println();
@@ -136,18 +124,30 @@ public class TreasureHunter
             System.out.println("***");
             System.out.println(hunter);
             System.out.println(currentTown);
-            System.out.println("(B)uy something at the shop.");
+            System.out.println(Town.GREEN + "(B)uy " + Town.RESET + "something at the shop.");
             System.out.println("(S)ell something at the shop.");
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
             System.out.println("(H)unt for treasure!");
-            System.out.println("Give up the hunt and e(X)it.");
             System.out.println("Gamble at the (C)asino.");
+            System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
             System.out.print("What's your next move? ");
             choice = scanner.nextLine();
             choice = choice.toUpperCase();
             processChoice(choice);
+
+            //Determines win/lose for the hunter
+            if (hunter.hasItemInKit(treasure.getTreasure1()) && hunter.hasItemInKit(treasure.getTreasure2()) && hunter.hasItemInKit(treasure.getTreasure3()))
+            {
+                choice = "x";
+                System.out.println("YOU FOUND ALL THREE TREASURES, " + hunter.getHunterName() + ". YOU WON!");
+            }
+            else if (hunter.getGold() == 0)
+            {
+                choice = "x";
+                System.out.println("YOU HAVE NO GOLD LEFT, " + hunter.getHunterName() + ". YOU LOST!");
+            }
         }
     }
 
