@@ -160,8 +160,8 @@ public class Town
         }
         else
         {
-            int choice = (int) (Math.random() * (33 + hunter.getLuck()/100)) + 1;
-            if (choice == 1)
+            int choice = (int) (Math.random() * (100 - hunter.getLuck()) + 1);
+            if (choice <= 50)
             {
                 treasure.setFoundTreasureInTown(true);
                 if (treasureInTown.equals(treasure.getTreasure1()))
