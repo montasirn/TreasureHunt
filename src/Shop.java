@@ -6,22 +6,49 @@ import java.util.Scanner;
 
 public class Shop
 {
-    // constants
-    private static final int WATER_COST = 2;
-    private static final int ROPE_COST = 4;
-    private static final int MACHETE_COST = 6;
-    private static final int HORSE_COST = 12;
-    private static final int BOAT_COST = 20;
+    private int waterCost;
+    private int ropeCost;
+    private int macheteCost;
+    private int horseCost;
+    private int boatCost;
 
     // instance variables
     private double markdown;
     private Hunter customer;
 
     //Constructor
-    public Shop(double markdown)
+    public Shop(double markdown, int waterCost, int ropeCost, int macheteCost, int horseCost, int boatCost)
     {
         this.markdown = markdown;
+        this.waterCost = waterCost;
+        this.ropeCost = ropeCost;
+        this.macheteCost = macheteCost;
+        this.horseCost = horseCost;
+        this.boatCost = boatCost;
         customer = null;
+    }
+
+    //setter methods
+
+
+    public void setWaterCost(int waterCost) {
+        this.waterCost = waterCost;
+    }
+
+    public void setRopeCost(int ropeCost) {
+        this.ropeCost = ropeCost;
+    }
+
+    public void setMacheteCost(int macheteCost) {
+        this.macheteCost = macheteCost;
+    }
+
+    public void setHorseCost(int horseCost) {
+        this.horseCost = horseCost;
+    }
+
+    public void setBoatCost(int boatCost) {
+        this.boatCost = boatCost;
     }
 
     /** method for entering the shop
@@ -86,11 +113,11 @@ public class Shop
      */
     public String inventory()
     {
-        String str = "Water: " + WATER_COST + " gold\n";
-        str += "Rope: " + ROPE_COST + " gold\n";
-        str += "Machete: " + MACHETE_COST + " gold\n";
-        str += "Horse: " + HORSE_COST + " gold\n";
-        str += "Boat: " + BOAT_COST + " gold\n";
+        String str = "Water: " + waterCost + " gold\n";
+        str += "Rope: " + ropeCost + " gold\n";
+        str += "Machete: " + macheteCost + " gold\n";
+        str += "Horse: " + horseCost + " gold\n";
+        str += "Boat: " + boatCost + " gold\n";
 
         return str;
     }
@@ -157,23 +184,23 @@ public class Shop
     {
         if (item.equalsIgnoreCase("Water"))
         {
-            return WATER_COST;
+            return waterCost;
         }
         else if (item.equalsIgnoreCase("Rope"))
         {
-            return ROPE_COST;
+            return ropeCost;
         }
         else if (item.equalsIgnoreCase("Machete"))
         {
-            return MACHETE_COST;
+            return macheteCost;
         }
         else if (item.equalsIgnoreCase("Horse"))
         {
-            return HORSE_COST;
+            return horseCost;
         }
         else if (item.equalsIgnoreCase("Boat"))
         {
-            return BOAT_COST;
+            return boatCost;
         }
         else
         {

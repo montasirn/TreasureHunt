@@ -101,7 +101,14 @@ public class TreasureHunter
         // note that we don't need to access the Shop object
         // outside of this method, so it isn't necessary to store it as an instance
         // variable; we can leave it as a local variable
-        Shop shop = new Shop(markdown);
+        Shop shop = new Shop(markdown, 2, 4, 6, 12, 20);
+        if (cheatMode) {
+            shop.setWaterCost(1);
+            shop.setRopeCost(1);
+            shop.setMacheteCost(1);
+            shop.setHorseCost(1);
+            shop.setBoatCost(1);
+        }
 
         // creating the new Town -- which we need to store as an instance
         // variable in this class, since we need to access the Town
