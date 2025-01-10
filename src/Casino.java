@@ -9,6 +9,8 @@ public class Casino {
     private String name;
     private Hunter gambler;
     private int roll;
+    private int goldWon;
+    private int goldLost;
     Scanner s = new Scanner(System.in);
 
 
@@ -38,11 +40,21 @@ public class Casino {
             if (roll == gamble){
                 System.out.println("The lucky number was " + roll + "! You just doubled your gold!");
                 gambler.changeGold(goldBet);
+                goldWon += goldBet;
+                if (goldWon >= 10){
+                    gambler.changeLuck(2);
+                    goldWon -= 10;
+                }
             } else if (min <= roll && roll <= max) {
                 System.out.println("The lucky number was " + roll + ". You were close so you get to keep your gold.");
             } else {
                 System.out.println("The lucky number was " + roll + ". You just lost all your gold!");
                 gambler.changeGold(-goldBet);
+                goldLost -= goldBet;
+                if (goldLost <= -10){
+                    gambler.changeLuck(-2);
+                    goldLost += 10;
+                }
             }
         }
     }

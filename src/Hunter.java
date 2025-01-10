@@ -11,6 +11,7 @@ public class Hunter
     private String hunterName;
     private String kit;
     private int gold;
+    private int luck;
 
     //Constructor
     /**
@@ -39,6 +40,12 @@ public class Hunter
     public int getGold()
     {
         return gold;
+    }
+
+    public int getLuck(){return luck;}
+
+    public void changeLuck(double modifier){
+        luck += modifier;
     }
 
     public void changeGold(int modifier)

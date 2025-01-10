@@ -141,6 +141,7 @@ public class TreasureHunter
             System.out.println(currentTown.getLatestNews());
             System.out.println("***");
             System.out.println(hunter);
+            System.out.println("Your luck is currently: " + hunter.getLuck());
             System.out.println(currentTown);
             System.out.println("(" + PURPLE_BOLD + "B" + Town.RESET + ")uy something at the shop.");
             System.out.println("(" + YELLOW_BOLD + "S" + Town.RESET +")ell something at the shop.");
@@ -158,11 +159,13 @@ public class TreasureHunter
             //Determines win/lose for the hunter
             if (hunter.hasItemInKit(treasure.getTreasure1()) && hunter.hasItemInKit(treasure.getTreasure2()) && hunter.hasItemInKit(treasure.getTreasure3()))
             {
+                System.out.println(currentTown.getLatestNews());
                 choice = "x";
                 System.out.println("YOU FOUND ALL THREE TREASURES, " + hunter.getHunterName() + ". YOU WON!");
             }
             else if (hunter.getGold() == 0)
             {
+                System.out.println(currentTown.getLatestNews());
                 choice = "x";
                 System.out.println("YOU HAVE NO GOLD LEFT, " + hunter.getHunterName() + ". YOU LOST!");
             }
